@@ -198,11 +198,6 @@ impl Intepreter {
 
     fn run(&mut self) -> Result<()> {
         while self.instruction_ptr < self.program.len() {
-            println!(
-                "{ip}: {instruction:?}",
-                ip = self.instruction_ptr,
-                instruction = self.program[self.instruction_ptr]
-            );
             match self.program[self.instruction_ptr] {
                 Instruction::AddrRight(count) => {
                     self.addr += count;
