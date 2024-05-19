@@ -1,8 +1,8 @@
 # 🦀🧠 rust_brain
 
-An implementation of a [brainfuck](https://en.wikipedia.org/wiki/Brainfuck) interpreter in Rust.
+An implementation of a [brainfuck](https://en.wikipedia.org/wiki/Brainfuck) interpreter in Rust accompanied by a X86_64 JIT for it.
 
-**WARNING:** The interpreter is a work in progress and not yet complete.
+**WARNING:** The interpreter was an explanation vehicle for a [youtube video series](https://www.youtube.com/playlist?list=PLy68GuC77sURmAfuSedQYRxgG9ORG6MnP), as well as a means to explore how an easy JIT can be written. It is therefore not a fully fledged optimal brainfuck implementation.
 
 ## Building
 
@@ -14,11 +14,13 @@ cargo build --release
 
 ## Execution
 
-To execute the interpreter, run it from the command line with the brainfuck source code to interpret as the first argument. For example:
+To execute the interpreter/jit, run it from the command line with the brainfuck source code to interpret as the first argument. For example:
 
 ```shell
 target/release/rust_brain examples/hello_world.brainfuck
 ```
+
+On a compatible system (X86_64/linux) the jit will automatically be chosen, otherwise the interpreter will be spun up.
 
 ## Purpose
 
